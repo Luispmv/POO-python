@@ -3,6 +3,7 @@
 #Clase padre
 class Vehiculo():
     def __init__(self, marca, modelo, precio):
+        #Encapsulacion
         self.marca = marca
         self.modelo = modelo
         self.precio = precio
@@ -15,9 +16,11 @@ class Vehiculo():
         else:
             print(f"El vehiculo {self.marca}. No esta disponible")
 
+    #Abstraccion
     def revisar_disponibilidad(self):
         return self.disponible
-    
+
+   #Abstraccion 
     def obtener_precio(self):
         return self.precio
     
@@ -29,15 +32,15 @@ class Vehiculo():
     
 
 #Subclases    
-
+#Herencia
 class Auto(Vehiculo):
-
+    #Polimorfismo
     def iniciar_motor(self):
         if not self.disponible:
             return f"{self.brand} Auto en marcha"
         else:
             return f"{self.brand} Auto no esta disponible"
-    
+    #Polimorfismo
     def detener_motor(self):
         if self.disponible:
             return f"{self.brand} Auto se ha detendido"
